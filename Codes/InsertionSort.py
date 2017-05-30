@@ -27,19 +27,14 @@
 import time
 
 
-class Sort:
-    def __init__(self, a):
-        self.a = a
-
-    @staticmethod
-    def insertion_sort(a):
-        for j in range(1, len(a)):
-            key = a[j]
-            i = j - 1
-            while i >= 0 and a[i] > key:
-                a[i + 1] = a[i]
-                i = i - 1
-            a[i + 1] = key
+def insertion_sort(a):
+    for j in range(1, len(a)):
+        key = a[j]
+        i = j - 1
+        while i >= 0 and a[i] > key:
+            a[i + 1] = a[i]
+            i = i - 1
+        a[i + 1] = key
 
 
 def main():
@@ -47,8 +42,7 @@ def main():
 
     # Mock array data
     a = [109, 22, -2323, 0, 23, 213, -33, 82, -12323, 0, 93, 123]
-    sort = Sort(a)
-    sort.insertion_sort(a)
+    insertion_sort(a)
     for j in range(0, len(a)):
         print(a[j], end=' ')
     print("\n\nExecuted time %.4f(s)" % (time.time() - start_time))
